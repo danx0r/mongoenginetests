@@ -8,7 +8,10 @@ Test2.drop_collection()
 
 t = Test(stringy = "this is a Test")
 t.save()
-t1 = Test1(stringz="this is a Test1")
+t1 = Test1(stringz="Test1_1")
+t2 = Test2(ref1=t, ref2=t, emb=t1)
+t2.save()
+t1.stringz="Test1_2"
 t2 = Test2(ref1=t, ref2=t, emb=t1)
 t2.save()
 
