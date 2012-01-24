@@ -12,5 +12,8 @@ class Test2(Document):
     ref2 = ReferenceField(Test)
     emb = EmbeddedDocumentField(Test1)
 
-test = Test(stringy = "this is a Test")
-test.save()
+t = Test(stringy = "this is a Test")
+t.save()
+t1 = Test1(stringz="this is a Test1")
+t2 = Test2(ref1=t, ref2=t, emb=t1)
+t2.save()
