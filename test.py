@@ -17,3 +17,6 @@ t.save()
 t1 = Test1(stringz="this is a Test1")
 t2 = Test2(ref1=t, ref2=t, emb=t1)
 t2.save()
+
+for i in Test2.objects:
+    print i.ref1.stringy, i.ref2.stringy, i.emb.stringz
